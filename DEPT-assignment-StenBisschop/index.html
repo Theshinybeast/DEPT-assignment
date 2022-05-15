@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/caseFilter.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <title>DEPT Work</title>
+</head>
+
+<body class="fade-in">
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="nav-logo">
+                <img src="images/dept-logo.png" alt="dept logo" class="logo">
+            </a>
+            <div class="hamburger-and-menu">
+                <input type="checkbox" class="menu-toggle">
+                <div class="hamburger"></div>
+                <div class="menu-bg-borders no-show">
+                    <div class="menu-bg"></div>
+                </div>
+                <ul class="menu no-show">
+                    <li class="menu__item"><a href="index.html" class="menu__link"><span></span>Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Werk</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Over</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Diensten</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Partners</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Stories</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Vacatures</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Events</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link"><span></span>Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-borders" id="top">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero__text">
+                    <h1 class="hero__title">Work</h1>
+                </div>
+                <a href="#" class="hero-btn">View case</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="relative">
+        <section class="dropdown-and-cases">
+            <div class="dropdown">
+                <button onclick="dropMenu()" class="dropbtn">Show me&nbsp;<span id="active-filter"></span>
+                    <div class="arrow-down"></div>
+                </button>
+                <div id="dropdown-menu" class="dropdown-content">
+                    <button class="btn active" onclick="filterSelection('all')"> all work</button>
+                    <a href="#travel"><button class="btn" onclick="filterSelection('travel')"> Travel</button></a>
+                    <a href="#technology"><button class="btn" onclick="filterSelection('technology')">
+                            Technology</button></a>
+                    <a href="#design"><button class="btn" onclick="filterSelection('design')"> Design</button></a>
+                    <a href="#other"><button class="btn" onclick="filterSelection('other')"> Other</button></a>
+                </div>
+            </div>
+            <div class="cases-container">
+                <div id="travel" class="reveal filter-item travel">
+                    <div class="filter-item__image image-bolcom"></div>
+                    <h2 class="filter-item__title">Bol.com</h2>
+                    <p class="filter-item__text">A summer island in the Netherlands</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div id="technology" class="reveal filter-item technology">
+                    <div class="filter-item__image image-kempen"></div>
+                    <h2 class="filter-item__title">Kempen</h2>
+                    <p class="filter-item__text">Not some average banking website</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div id="design" class="reveal filter-item design technology">
+                    <div class="filter-item__image image-philips"></div>
+                    <h2 class="filter-item__title">Philips</h2>
+                    <p class="filter-item__text">Beautiful design meets innovative technology</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item design">
+                    <div class="filter-item__image image-gemeentemuseum"></div>
+                    <h2 class="filter-item__title">Gemeentemuseum</h2>
+                    <p class="filter-item__text">A 100 years of Mondriaan & De Stijl</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div id="other" class="reveal filter-item other">
+                    <div class="filter-item__image image-liberty-global"></div>
+                    <h2 class="filter-item__title">Be Lighting</h2>
+                    <p class="filter-item__text">Delivering clarity on a global scale</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item travel">
+                    <div class="filter-item__image image-tui"></div>
+                    <h2 class="filter-item__title">TUI</h2>
+                    <p class="filter-item__text">Swipe to find your next holiday destination</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item other">
+                    <div class="filter-item__image image-chocomel"></div>
+                    <h2 class="filter-item__title">Chocomel</h2>
+                    <p class="filter-item__text">A campaign for the limited edition letter packs</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item technology">
+                    <div class="filter-item__image image-jbl"></div>
+                    <h2 class="filter-item__title">Jbl</h2>
+                    <p class="filter-item__text">Live like a champion with Jerome Booteng</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item other">
+                    <div class="filter-item__image image-zalando"></div>
+                    <h2 class="filter-item__title">zalando</h2>
+                    <p class="filter-item__text">Innovative SEO and content strategy for Zalando</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+                <div class="reveal filter-item other">
+                    <div class="filter-item__image image-koninklijke-bibliotheek"></div>
+                    <h2 class="filter-item__title">Koninklijke Bibliotheek</h2>
+                    <p class="filter-item__text">The search for the most influential book ever</p>
+                    <a href="#" class="filter-item__link">
+                        <div class="arrow-right"></div>View case
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer-and-up reveal">
+        <div class="footer-bg">
+            <footer>
+                <a href="index.html" class="nav-logo">
+                    <img src="images/dept-logo-white.png" alt="dept logo white" class="footer__logo">
+                </a>
+                <ul class="footer-menu">
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Work</a></li>
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Service</a></li>
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Stories</a></li>
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">About</a></li>
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Careers</a></li>
+                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Contact</a></li>
+                </ul>
+                <div class="icons">
+                    <a href="#" class="icons__item"><img class="icons__item-link" src="images/icon-fb.png"
+                            alt="facebook"></a>
+                    <a href="#" class="icons__item"><img class="icons__item-link" src="images/icon-twitter.png"
+                            alt="twitter"></a>
+                    <a href="#" class="icons__item"><img class="icons__item-link" src="images/icon-instagram.png"
+                            alt="instagram"></a>
+                </div>
+            </footer>
+            <div class="footer-info">
+                <p>Chamber of Commerce: 63464101</p>
+                <p>VAT: NL 8552.47.502.B01</p>
+                <p>Terms and conditions</p>
+                <p>© 2022 Dept Agency</p>
+            </div>
+        </div>
+        <a href="#top" class="up">
+            <img class="arrow-up" src="images/up-arrow.png" alt="arrow up">
+        </a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/caseFilter.js"></script>
+    <script src="scripts/reveal.js"></script>
+    <script src="scripts/menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+header {
+    position: fixed;
+    z-index: 100;
+    height: 120px;
+    top: 0px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.nav {
+    position: fixed;
+    margin-top: 60px;
+    height: 60px;
+    left: 7.5%;
+    right: 7.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: transparent;
+    border-bottom: 1px solid var(--dark-color);
+}
+
+/* DEPT logo */
+.logo {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    transition: all 250ms ease-out;
+}
+
+/* menu same responsive width as nav */
+.hamburger-and-menu {
+    position: fixed;
+    left: 7.5%;
+    right: 7.5%;
+}
+
+.menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0%;
+    z-index: 20;
+}
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Hamburger lines */
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    background: var(--dark-color);
+    transition: all 250ms ease-in-out;
+}
+
+/* hamburger lines between space */
+.hamburger:before {
+    transform: translateY(-4px);
+}
+
+.hamburger:after {
+    transform: translateY(4px);
+}
+
+/* hamburger animation to x */
+.menu-toggle:checked+.hamburger::before {
+    transform: translateY(0) rotate(45deg);
+    background: var(--lightest-color);
+}
+
+.menu-toggle:checked+.hamburger::after {
+    transform: translateY(0) rotate(-45deg);
+    background: var(--lightest-color);
+}
+
+/* hamburger hover animation */
+.menu-toggle:hover+.hamburger {
+    transform: translateY(0) rotate(-10deg);
+}
+
+/* menu style */
+.menu {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    visibility: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 450ms ease-in-out;
+    z-index: 9;
+}
+
+.menu__item {
+    list-style-type: none;
+    width: 100%;
+    opacity: 0;
+    animation: menuFadeOut ease-in-out 450ms forwards;
+}
+
+.menu-toggle:checked~.menu .menu__item {
+    animation: menuFadeIn ease-in-out 450ms forwards;
+}
+
+.menu-toggle:checked~.menu li:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(2) {
+    animation-delay: 50ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(3) {
+    animation-delay: 100ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(4) {
+    animation-delay: 150ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(5) {
+    animation-delay: 200ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(6) {
+    animation-delay: 250ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(7) {
+    animation-delay: 300ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(8) {
+    animation-delay: 350ms;
+}
+
+.menu-toggle:checked~.menu li:nth-child(9) {
+    animation-delay: 400ms;
+}
+
+
+@keyframes menuFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0%) translateY(0%);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(500px) translateY(-500px);
+    }
+}
+
+@keyframes menuFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(200px) translateY(-500px);
+    }
+
+    75% {
+        opacity: .2;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+.menu__link {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin-right: 0;
+    margin-left: auto;
+    font-size: 8vmin;
+    text-decoration: none;
+    color: var(--lightest-color);
+    line-height: 8vmin;
+    transition: color 50ms ease-in-out;
+    border-bottom: 1px solid var(--medium-color);
+}
+
+.menu__link:hover {
+    color: var(--medium-color);
+}
+
+/* show menu */
+.menu-toggle:checked~.menu {
+    visibility: visible;
+}
+
+/* menu-bg borders */
+.menu-bg-borders {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    border: 20px solid transparent;
+    pointer-events: none;
+}
+
+/* animation background menu */
+.menu-bg {
+    background: var(--lightest-color);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: calc(7.5% - 17px);
+    top: 50px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 400ms ease-in-out,
+        background-color 700ms ease-in;
+}
+
+.menu-toggle:checked~.menu-bg-borders .menu-bg {
+    background: var(--dark-color);
+    transform: scale(150);
+    transition: transform 500ms ease-in-out,
+        background-color 300ms ease-out;
+}
+
+/* arrow */
+li a span {
+    transform: translateX(-.5em);
+    opacity: 0;
+    font-size: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: .4em;
+    width: 0;
+    height: 0;
+    align-items: center;
+    border-top: .2em solid transparent;
+    border-bottom: .2em solid transparent;
+    border-left: .3em solid var(--lightest-color);
+}
+
+.nav-arrow-right {
+    font-size: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: .4em;
+    width: 0;
+    height: 0;
+    align-items: center;
+    border-top: .2em solid transparent;
+    border-bottom: .2em solid transparent;
+    border-left: .3em solid var(--lightest-color);
+    transform: translateX(0px);
+    transition: all 200ms ease-in;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        height: 60px;
+    }
+
+    .nav {
+        position: fixed;
+        margin-top: 0px;
+        height: 60px;
+        left: 5%;
+        right: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border-bottom: 0px;
+    }
+
+    .logo {
+        position: relative;
+        width: 100%;
+        height: 4vw;
+    }
+
+    .hamburger-and-menu {
+        position: fixed;
+        left: 5%;
+        right: 5%;
+        align-self: center;
+        height: 0;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transform: translateY(-15px);
+        opacity: 0%;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        transform: translateY(-15px);
+        transition: all 250ms ease-out;
+        cursor: pointer;
+    }
+
+    /* hamburger animation to x */
+    .menu-toggle:checked+.hamburger::before {
+        transform: translateY(-15) rotate(45deg);
+        background: var(--lightest-color);
+    }
+
+    .menu-toggle:checked+.hamburger::after {
+        transform: translateY(-15) rotate(-45deg);
+        background: var(--lightest-color);
+    }
+
+    /* hamburger hover animation */
+    .menu-toggle:hover+.hamburger {
+        transform: translateY(-15px) rotate(-10deg);
+    }
+
+    .menu {
+        position: relative;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 80px;
+        visibility: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        transition: all 450ms ease-in-out;
+    }
+
+
+    /* menu-bg borders */
+    .menu-bg-borders {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        background: transparent;
+        width: 100vw;
+        height: 100vh;
+        border: 0px;
+        pointer-events: none;
+    }
+
+    /* animation background menu */
+    .menu-bg {
+        right: 5%;
+        top: 15px;
+    }
+}
+
+.no-show {
+    visibility: hidden;
+    top: 0;
+    height: 0;
+    transition: all 250ms ease-out;
+}

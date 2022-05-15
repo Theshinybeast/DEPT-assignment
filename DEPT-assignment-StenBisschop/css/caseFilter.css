@@ -1,0 +1,202 @@
+.dropdown-and-cases {
+    position: static;
+    margin: 0 auto;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dropdown {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.dropbtn {
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    display: flex;
+    background-color: transparent;
+    color: var(--medium-color);
+    padding: .5rem;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+#active-filter {
+    font-family: 'Teko', sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid var(--dark-color);
+    color: var(--dark-color);
+}
+
+.dropdown-content {
+    position: relative;
+    visibility: hidden;
+    flex-direction: row;
+    background-color: var(--lightest-color);
+    border: 1px solid var(--accent-color);
+}
+
+.show {
+    visibility: visible;
+}
+
+.arrow-down {
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 0;
+    height: 0;
+    align-items: center;
+    border-top: .2em solid var(--dark-color);
+    border-right: .2em solid transparent;
+    border-left: .2em solid transparent;
+    transform: translateX(0px);
+    transition: all 200ms ease-in;
+    opacity: 1;
+}
+
+.cases-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.filter-item {
+    position: relative;
+    background: var(--lightest-color);
+    width: 500px;
+    margin: 20px;
+    display: none;
+}
+
+.filter-item__image {
+    background-size: cover;
+    height: 400px;
+}
+
+.filter-item__title {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: 'arial';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--medium-color);
+    font-size: .9rem;
+}
+
+.filter-item__text {
+    font-family: 'Teko', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    margin-bottom: .5em;
+}
+
+.filter-item__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'arial';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.arrow-right {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: .2em;
+    width: 0;
+    height: 0;
+    align-items: center;
+    border-top: .2em solid transparent;
+    border-bottom: .2em solid transparent;
+    border-left: .2em solid var(--accent-color);
+    transform: translateX(0px);
+    transition: all 200ms ease-in;
+    opacity: 1;
+}
+
+.image-bolcom {
+    background-image: url('../images/bolcom.png');
+}
+
+.image-chocomel {
+    background-image: url('../images/chocomel.png');
+}
+
+.image-arla {
+    background-image: url('../images/arla.png');
+}
+
+.image-gemeentemuseum {
+    background-image: url('../images/gemeentemuseum.png');
+}
+
+.image-jbl {
+    background-image: url('../images/jbl.png');
+}
+
+.image-kempen {
+    background-image: url('../images/kempen.png');
+}
+
+.image-koninklijke-bibliotheek {
+    background-image: url('../images/koninklijke-bibliotheek.png');
+}
+
+.image-liberty-global {
+    background-image: url('../images/liberty-global.png');
+}
+
+.image-philips {
+    background-image: url('../images/philips.png');
+}
+
+.image-tui {
+    background-image: url('../images/tui.png');
+}
+
+.image-zalando {
+    background-image: url('../images/zalando.png');
+}
+
+/* add show class to filtered elements */
+.show {
+    display: block;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: var(--lightest-color);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--medium-color);
+}
+
+.btn.active {
+    background-color: var(--accent-color);
+    color: var(--lightest-color);
+}
+
+@media only screen and (max-width: 600px) {
+    .dropdown-and-cases {
+        width: 100%;
+    }
+}
